@@ -7,7 +7,7 @@ Official code for **Hierarchical Modular Network for Video Captioning**. <br>
 
 Accepted by CVPR2022<br>
 
-<img src="/Users/bismarck/PycharmProjects/OpenSources/HMN/figures/motivation.png" alt="motivation" style="zoom:15%;" />
+<img src="figures/motivation.png" alt="motivation" style="zoom:15%;" />
 
 <center><div style="color:orange; display: inline-block; color: black; padding: 2px;">Figure 1.Motivation</div></center>
 
@@ -25,13 +25,13 @@ As there are a large number of objects in a video, but only a few are mentioned 
 
 As shown in Figure 2, our model follows the conventional **Encoder-Decoder** paradigm, where the proposed Hierarchical Modular Network (HMN) serves as the encoder. HMN consists of the entity, predicate, and sentence modules. These modules are designed to bridge video representations and linguistic semantics from three levels. Our model operates as follows. First, taking all detected objects as input, the entity module outputs the features of principal objects. The predicate module encodes actions by combining features of principal objects and the video motion. Next, the sentence module encodes a global representation for the entire video content considering the global context and features of previously generated objects and actions. Finally, all features are concatenated together and fed into the decoder to generate captions. Each module has its own input and linguistic supervision extracted from captions.
 
-<img src="/Users/bismarck/PycharmProjects/OpenSources/HMN/figures/HMN.png" alt="HMN" style="zoom:22%;" />
+<img src="figures/HMN.png" alt="HMN" style="zoom:22%;" />
 
 <center><div style="color:orange;  display: inline-block; color: black; ">Figure 2. Hierarchical Modular Network</div></center>
 
 Figure 3 illustrates the main architecture of our entity module, which consists of a transformer encoder and transformer decoder. This design is motivated by [DETR](https://arxiv.org/abs/2005.12872), which utilizes a transformer encoder-decoder architecture to learn a fixed set of object queries to directly predict object bounding boxes for the object detection task. Instead of simply detecting objects, we aim to determine the important ones in the video.
 
-<img src="/Users/bismarck/PycharmProjects/OpenSources/HMN/figures/Entity.png" alt="Entity" style="zoom:19%;" />
+<img src="figures/Entity.png" alt="Entity" style="zoom:19%;" />
 
 <center><div style="color:orange;  display: inline-block; color: black; ">Figure 3. Main architecture of the entity module</div></center>
 
