@@ -1,0 +1,1 @@
+/home/marcusnerva/PythonProject/hierarchical_captioning/data/MSVD/language/idx2word.pkl
