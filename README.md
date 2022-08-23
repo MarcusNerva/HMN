@@ -57,29 +57,23 @@ git clone https://github.com/MarcusNerva/HMN.git
 cd HMN
 ```
 
-- Install python requirements:
-
-```
-pip install -r requirements.txt
-```
-
 
 
 #### 2.Download datasets
 
 **MSR-VTT Dataset:**
 
-- Context features (2D CNN features) : [MSRVTT-InceptionResNetV2]()
-- Motion features (3D CNN features) : [MSRVTT-C3D]()
-- Object features (Extracted by Faster-RCNN) : [MSRVTT-Faster-RCNN]()
-- Linguistic supervision: [MSRVTT-Language]()
+- Context features (2D CNN features) : [MSRVTT-InceptionResNetV2](https://1drv.ms/u/s!ArYBhHmSAbFOc20zPEg-aSP7_cI?e=fhT1lN)
+- Motion features (3D CNN features) : [MSRVTT-C3D](https://1drv.ms/u/s!ArYBhHmSAbFOdKU9iZgHFGFHCAE?e=H5DyOE)
+- Object features (Extracted by Faster-RCNN) : [MSRVTT-Faster-RCNN](https://1drv.ms/u/s!ArYBhHmSAbFOdVQnfilWp6_epv4?e=Am9OXT)
+- Linguistic supervision: [MSRVTT-Language](https://1drv.ms/u/s!ArYBhHmSAbFOe0dX-SBDdxJ9RHM?e=ZlNbBQ)
 
 **MSVD Dataset:** 
 
-- Context features (2D CNN features) : [MSVD-InceptionResNetV2]()
-- Motion features (3D CNN features) : [MSVD-C3D]()
-- Object features (Extracted by Faster-RCNN) : [MSVD-Faster-RCNN]()
-- Linguistic supervision: [MSVD-Language]()
+- Context features (2D CNN features) : [MSVD-InceptionResNetV2](https://1drv.ms/u/s!ArYBhHmSAbFOeMT-jksQPhkzYHA?e=mO2DTu)
+- Motion features (3D CNN features) : [MSVD-C3D](https://1drv.ms/u/s!ArYBhHmSAbFOd8H6ciT2CYwqFaE?e=VeWdS8)
+- Object features (Extracted by Faster-RCNN) : [MSVD-Faster-RCNN](https://1drv.ms/u/s!ArYBhHmSAbFOef5wZTxndFlz7bQ?e=fBPFHG)
+- Linguistic supervision: [MSVD-Language](https://1drv.ms/u/s!ArYBhHmSAbFOetaEHJnITH8q-eE?e=ePZlcn)
 
 
 
