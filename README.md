@@ -194,17 +194,13 @@ in `main.py`. And then execute the training shell command again.
 If our research and this repository are helpful to your work, please cite with:
 
 ```
-@article{DBLP:journals/corr/abs-2111-12476,
-  author    = {Hanhua Ye and
-               Guorong Li and
-               Yuankai Qi and
-               Shuhui Wang and
-               Qingming Huang and
-               Ming{-}Hsuan Yang},
-  title     = {Hierarchical Modular Network for Video Captioning},
-  journal   = {CoRR},
-  volume    = {abs/2111.12476},
-  year      = {2021}
+@InProceedings{Ye_2022_CVPR,
+    author    = {Ye, Hanhua and Li, Guorong and Qi, Yuankai and Wang, Shuhui and Huang, Qingming and Yang, Ming-Hsuan},
+    title     = {Hierarchical Modular Network for Video Captioning},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2022},
+    pages     = {17939-17948}
 }
 ```
 
