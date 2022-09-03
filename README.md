@@ -150,8 +150,6 @@ python -u main.py --dataset_name MSRVTT --entity_encoder_layer 3 --entity_decode
 			--learning_rate 7e-5 --lambda_object 0.1 --lambda_action 6.9 --lambda_video 6.9 --lambda_soft 3.5 
 ```
 
-[Pretrained model on MSR-VTT](https://1drv.ms/u/s!ArYBhHmSAbFOgT_ULYcz4aJa09Xk?e=4JQV68)
-
 
 
 #### Training: MSVD
@@ -166,8 +164,6 @@ python -u main.py --dataset_name MSVD --entity_encoder_layer 2 --entity_decoder_
 			--language_dir_name language --language_package_name vid2language_old \
 			--learning_rate 1e-4 --lambda_object 0.6 --lambda_action 0.3 --lambda_video 1.0 --lambda_soft 0.5 
 ```
-
-[Pretrained model on MSVD](https://1drv.ms/u/s!ArYBhHmSAbFOgT4WChFbh7sTAHyI?e=CYDjVa)
 
 
 
@@ -185,7 +181,9 @@ in `main.py`. And then execute the training shell command again.
 
 ## Pretrained Model
 
+[Pretrained model on MSR-VTT](https://1drv.ms/u/s!ArYBhHmSAbFOgT_ULYcz4aJa09Xk?e=4JQV68)
 
+[Pretrained model on MSVD](https://1drv.ms/u/s!ArYBhHmSAbFOgT4WChFbh7sTAHyI?e=CYDjVa)
 
 
 
