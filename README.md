@@ -93,7 +93,8 @@ data
 │   │   ├── idx2word.pkl
 │   │   ├── vid2groundtruth.pkl
 │   │   ├── vid2language.pkl
-│   │   └── word2idx.pkl
+│   │   ├── word2idx.pkl
+│   │   └── vid2fillmask_MSRVTT_official
 │   ├── MSRVTT_splits
 │   │   ├── MSRVTT_test_list.pkl
 │   │   ├── MSRVTT_train_list.pkl 
@@ -114,7 +115,8 @@ data
     │   ├── idx2word.pkl
     │   ├── vid2groundtruth.pkl
     │   ├── vid2language.pkl
-    │   └── word2idx.pkl
+    │   ├── word2idx.pkl
+    │   └── vid2fillmask_MSRVTT_official
     ├── MSVD_splits
     │   ├── MSVD_test_list.pkl
     │   ├── MSVD_train_list.pkl
@@ -148,6 +150,10 @@ python -u main.py --dataset_name MSRVTT --entity_encoder_layer 3 --entity_decode
 			--learning_rate 7e-5 --lambda_object 0.1 --lambda_action 6.9 --lambda_video 6.9 --lambda_soft 3.5 
 ```
 
+[Pretrained model on MSR-VTT](https://1drv.ms/u/s!ArYBhHmSAbFOgT_ULYcz4aJa09Xk?e=4JQV68)
+
+
+
 #### Training: MSVD
 
 ```bash
@@ -160,6 +166,8 @@ python -u main.py --dataset_name MSVD --entity_encoder_layer 2 --entity_decoder_
 			--language_dir_name language --language_package_name vid2language_old \
 			--learning_rate 1e-4 --lambda_object 0.6 --lambda_action 0.3 --lambda_video 1.0 --lambda_soft 0.5 
 ```
+
+[Pretrained model on MSVD](https://1drv.ms/u/s!ArYBhHmSAbFOgT4WChFbh7sTAHyI?e=CYDjVa)
 
 
 
