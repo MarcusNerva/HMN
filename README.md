@@ -57,6 +57,8 @@ git clone https://github.com/MarcusNerva/HMN.git
 cd HMN
 ```
 
++ Clone a python3-version coco_caption repo under the utilis/
+
 
 
 #### 2.Download datasets
@@ -94,7 +96,7 @@ data
 │   │   ├── vid2groundtruth.pkl
 │   │   ├── vid2language.pkl
 │   │   ├── word2idx.pkl
-│   │   └── vid2fillmask_MSRVTT_official
+│   │   └── vid2fillmask_MSRVTT.pkl
 │   ├── MSRVTT_splits
 │   │   ├── MSRVTT_test_list.pkl
 │   │   ├── MSRVTT_train_list.pkl 
@@ -116,7 +118,7 @@ data
     │   ├── vid2groundtruth.pkl
     │   ├── vid2language.pkl
     │   ├── word2idx.pkl
-    │   └── vid2fillmask_MSRVTT_official
+    │   └── vid2fillmask_MSVD.pkl
     ├── MSVD_splits
     │   ├── MSVD_test_list.pkl
     │   ├── MSVD_train_list.pkl
@@ -135,6 +137,31 @@ data
 
 
 
+## Pretrained Model
+
+[Pretrained model on MSR-VTT](https://1drv.ms/u/s!ArYBhHmSAbFOgT_ULYcz4aJa09Xk?e=4JQV68)
+
+[Pretrained model on MSVD](https://1drv.ms/u/s!ArYBhHmSAbFOgT4WChFbh7sTAHyI?e=CYDjVa)
+
+Download pretrained model on MSR-VTT and MSVD via above links, and place them undir checkpoints dir:
+
+```
+mkdir -p checkpoints/MSRVTT
+mkdir -p checkpoints/MSVD
+```
+
+Finally got:
+
+```
+checkpoints/
+├── MSRVTT
+│   └── HMN_MSRVTT_model.ckpt
+└── MSVD
+    └── HMN_MSVD_model.ckpt
+```
+
+
+
 ## Training & Testing
 
 #### Training: MSR-VTT
@@ -145,9 +172,9 @@ python -u main.py --dataset_name MSRVTT --entity_encoder_layer 3 --entity_decode
 			--backbone_3d_name C3D --backbone_3d_dim 2048 \
 			--object_name vg_objects --object_dim 2048 \
 			--max_epochs 16 --save_checkpoints_every 500 \
-			--data_dir ./data --model_name HMN --fillmask_name vid2fillmask_MSRVTT_official \
-			--language_dir_name language --language_package_name vid2language_old \
-			--learning_rate 7e-5 --lambda_object 0.1 --lambda_action 6.9 --lambda_video 6.9 --lambda_soft 3.5 
+			--data_dir ./data --model_name HMN 
+			--language_dir_name language \
+			--learning_rate 7e-5 --lambda_entity 0.1 --lambda_predicate 6.9 --lambda_sentence 6.9 --lambda_soft 3.5 
 ```
 
 
@@ -160,30 +187,62 @@ python -u main.py --dataset_name MSVD --entity_encoder_layer 2 --entity_decoder_
 			--backbone_3d_name C3D --backbone_3d_dim 2048 \
 			--object_name vg_objects --object_dim 2048 \
 			--max_epochs 20 --save_checkpoints_every 500 \
-			--data_dir ./data --model_name HMN --fillmask_name vid2fillmask_MSVD_official \
+			--data_dir ./data --model_name HMN \
 			--language_dir_name language --language_package_name vid2language_old \
-			--learning_rate 1e-4 --lambda_object 0.6 --lambda_action 0.3 --lambda_video 1.0 --lambda_soft 0.5 
+			--learning_rate 1e-4 --lambda_entity 0.6 --lambda_predicate 0.3 --lambda_sentence 1.0 --lambda_soft 0.5 
 ```
 
 
 
 #### Testing MSR-VTT & MSVD
 
-Comment out `train_fn`
+Comment out `train_fn` in `main.py` first.
 
 ```python
 model = train_fn(cfgs, cfgs.model_name, model, hungary_matcher, train_loader, valid_loader, device)
 ```
 
-in `main.py`. And then execute the training shell command again.
+
+
+For MSR-VTT:
+
+```
+python3 main.py --dataset_name MSRVTT \
+				--entity_encoder_layer 3 --entity_decoder_layer 3 --max_objects 9 \
+				--backbone_2d_name inceptionresnetv2 --backbone_2d_dim 1536 \
+				--backbone_3d_name C3D --backbone_3d_dim 2048 \
+				--object_name vg_objects --object_dim 2048 \
+				--max_epochs 16 --save_checkpoints_every 500 \
+				--data_dir ./data --model_name HMN --learning_rate 7e-5 \
+				--lambda_entity 0.1 --lambda_predicate 6.9 --lambda_sentence 6.9 \
+				--lambda_soft 3.5 \
+				--save_checkpoints_path checkpoints/MSRVTT/HMN_MSRVTT_model.ckpt
+```
+
+Get performance:
+
+<img src="figures/MSRVTT-performance.png" alt="MSRVTT-performance" style="zoom:50%;" />
 
 
 
-## Pretrained Model
+For MSVD:
 
-[Pretrained model on MSR-VTT](https://1drv.ms/u/s!ArYBhHmSAbFOgT_ULYcz4aJa09Xk?e=4JQV68)
+```
+python3 main.py --dataset_name MSVD \
+				--entity_encoder_layer 2 --entity_decoder_layer 2 --max_objects 8 \
+				--backbone_2d_name inceptionresnetv2 --backbone_2d_dim 1536 \
+				--backbone_3d_name C3D --backbone_3d_dim 2048 \
+				--object_name vg_objects --object_dim 2048 \
+				--max_epochs 20 --save_checkpoints_every 500 \
+				--data_dir ./data --model_name HMN --learning_rate 1e-4 \
+				--lambda_entity 0.6 --lambda_predicate 0.3 --lambda_a_sentence 1.0 \
+				--lambda_soft 0.5 \
+				--save_checkpoints_path checkpoints/MSVD/HMN_MSVD_model.ckpt
+```
 
-[Pretrained model on MSVD](https://1drv.ms/u/s!ArYBhHmSAbFOgT4WChFbh7sTAHyI?e=CYDjVa)
+Get performance:
+
+<img src="figures/MSVD-performance.png" alt="MSVD-performance" style="zoom:50%;" />
 
 
 
