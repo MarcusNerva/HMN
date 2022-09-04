@@ -1,0 +1,17 @@
+# => data dir
+data/MSRVTT/
+data/MSVD/
+
+# => checkpoints
+checkpoints/
+
+# => results
+results/
+
+# => pycache
+*/__pycache__
+__pycache__/
+
+# => eval metrics
+utils/coco_caption
+
