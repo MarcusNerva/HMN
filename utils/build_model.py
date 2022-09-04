@@ -36,8 +36,8 @@ def build_model(cfgs: TotalConfigs):
     max_objects = cfgs.encoder.max_objects
 
     nheads = cfgs.encoder.nheads
-    trans_num_encoder_layers = cfgs.encoder.num_encoder_layer
-    trans_num_decoder_layers = cfgs.encoder.num_decoder_layer
+    trans_num_encoder_layers = cfgs.encoder.entity_encoder_layer
+    trans_num_decoder_layers = cfgs.encoder.entity_encoder_layer
     dim_feedforward = cfgs.encoder.dim_feedforward
     transformer_activation = cfgs.encoder.transformer_activation
     d_model = cfgs.encoder.d_model

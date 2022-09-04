@@ -13,8 +13,7 @@ def _settings():
     parser.add_argument('--drop_prob', type=float, default=0.5)
     parser.add_argument('--bsz', type=int, default=64, help='batch size')
     parser.add_argument('--sample_numb', type=int, default=15, help='how many frames would you like to sample from a given video')
-    parser.add_argument('--model_name', type=str, default='HMN',
-                        help='which model you would like to train/test?')
+    parser.add_argument('--model_name', type=str, default='HMN', help='which model you would like to train/test?')
 
     """
     =========================Data Settings===========================
@@ -23,12 +22,9 @@ def _settings():
     parser.add_argument('--checkpoints_dir', type=str, default='./checkpoints')
     parser.add_argument('--result_dir', type=str, default='-1')
     parser.add_argument('--dataset_name', type=str, default='-1')
-    parser.add_argument('--language_package_name', type=str, default='vid2language')
     parser.add_argument('--backbone_2d_name', type=str, default='-1', help='2d backbone name (InceptionResNetV2)')
     parser.add_argument('--backbone_3d_name', type=str, default='-1', help='3d backbone name (C3D)')
     parser.add_argument('--object_name', type=str, default='-1', help='object features name (vg_objects)')
-    parser.add_argument('--language_dir_name', type=str, default='-1', help='the name of language dir')
-    parser.add_argument('--fillmask_name', type=str, default='-1', help='fillmask name')
     parser.add_argument('--semantics_dim', type=int, default=768, help='semantics embedding dim')
 
     """
@@ -184,7 +180,6 @@ class TrainingConfigs:
         self.lambda_sentence = args.lambda_sentence
         self.lambda_soft = args.lambda_soft
         self.max_epochs = args.max_epochs
-        self.patience = args.patience
         self.visualize_every = args.visualize_every
         self.checkpoints_dir = os.path.join(args.checkpoints_dir, args.dataset_name)
         self.save_checkpoints_every = args.save_checkpoints_every
