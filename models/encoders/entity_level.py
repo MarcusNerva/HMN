@@ -1,8 +1,6 @@
 import torch
 import torch.nn as nn
-import numpy as np
 from torch import Tensor
-from torch.nn.modules.linear import Linear
 
 
 class EntityLevelEncoder(nn.Module):
@@ -11,10 +9,27 @@ class EntityLevelEncoder(nn.Module):
         self.max_objects = max_objects
 
         self.query_embed = nn.Embedding(max_objects, hidden_dim)
-        self.input_proj = nn.Linear(object_dim, hidden_dim)
-        self.feature2d_proj = nn.Linear(feature2d_dim, hidden_dim)
-        self.feature3d_proj = nn.Linear(feature3d_dim, hidden_dim)
-
+        self.input_proj = nn.Sequential(
+            nn.Linear(object_dim, hidden_dim * 2),
+            nn.BatchNorm1d(hidden_dim * 2),
+            nn.ReLU(True),
+            nn.Dropout(0.5),
+            nn.Linear(hidden_dim * 2, hidden_dim)
+        )
+        self.feature2d_proj = nn.Sequential(
+            nn.Linear(feature2d_dim, 2 * hidden_dim),
+            nn.BatchNorm1d(hidden_dim * 2),
+            nn.ReLU(True),
+            nn.Dropout(0.5),
+            nn.Linear(hidden_dim * 2, hidden_dim)
+        )
+        self.feature3d_proj = nn.Sequential(
+            nn.Linear(feature3d_dim, 2 * hidden_dim),
+            nn.BatchNorm1d(hidden_dim * 2),
+            nn.ReLU(True),
+            nn.Dropout(0.5),
+            nn.Linear(hidden_dim * 2, hidden_dim)
+        )
         self.bilstm = nn.LSTM(input_size=hidden_dim * 2, hidden_size=hidden_dim//2, 
                             batch_first=True, bidirectional=True)
         self.transformer = transformer
