@@ -139,9 +139,9 @@ data
 
 ## Pretrained Model
 
-[Pretrained model on MSR-VTT](https://1drv.ms/u/s!ArYBhHmSAbFOgT_ULYcz4aJa09Xk?e=4JQV68)
+[Pretrained model on MSR-VTT](https://1drv.ms/u/s!ArYBhHmSAbFOgTicz9UR4ljs_JD4?e=YC8gKW)
 
-[Pretrained model on MSVD](https://1drv.ms/u/s!ArYBhHmSAbFOgT4WChFbh7sTAHyI?e=CYDjVa)
+[Pretrained model on MSVD](https://1drv.ms/u/s!ArYBhHmSAbFOgT1ahP77Tij-6yUy?e=KeoDZV)
 
 Download pretrained model on MSR-VTT and MSVD via above links, and place them undir checkpoints dir:
 
