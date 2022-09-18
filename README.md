@@ -7,7 +7,7 @@ Official code for **Hierarchical Modular Network for Video Captioning**. <br>
 
 Accepted by CVPR2022<br>
 
-<img src="figures/motivation.png" alt="motivation" style="zoom:15%;" />
+<img src="figures/motivation.png" alt="motivation" style="zoom:12%;" />
 
 <center><div style="color:orange; display: inline-block; color: black; padding: 2px;">Figure 1.Motivation</div></center>
 
@@ -31,7 +31,7 @@ As shown in Figure 2, our model follows the conventional **Encoder-Decoder** par
 
 Figure 3 illustrates the main architecture of our entity module, which consists of a transformer encoder and transformer decoder. This design is motivated by [DETR](https://arxiv.org/abs/2005.12872), which utilizes a transformer encoder-decoder architecture to learn a fixed set of object queries to directly predict object bounding boxes for the object detection task. Instead of simply detecting objects, we aim to determine the important ones in the video.
 
-<img src="figures/Entity.png" alt="Entity" style="zoom:19%;" />
+<img src="figures/Entity.png" alt="Entity" style="zoom:14%;" />
 
 <center><div style="color:orange;  display: inline-block; color: black; ">Figure 3. Main architecture of the entity module</div></center>
 
