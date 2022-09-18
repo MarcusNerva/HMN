@@ -69,6 +69,7 @@ cd HMN
 - Motion features (3D CNN features) : [MSRVTT-C3D](https://1drv.ms/u/s!ArYBhHmSAbFOdKU9iZgHFGFHCAE?e=H5DyOE)
 - Object features (Extracted by Faster-RCNN) : [MSRVTT-Faster-RCNN](https://1drv.ms/u/s!ArYBhHmSAbFOdVQnfilWp6_epv4?e=Am9OXT)
 - Linguistic supervision: [MSRVTT-Language](https://1drv.ms/u/s!ArYBhHmSAbFOe0dX-SBDdxJ9RHM?e=ZlNbBQ)
+- Splits: [MSRVTT-Splits](https://1drv.ms/u/s!ArYBhHmSAbFOgURAYMc4f2-TeI0U?e=tde70k)
 
 **MSVD Dataset:** 
 
@@ -76,6 +77,7 @@ cd HMN
 - Motion features (3D CNN features) : [MSVD-C3D](https://1drv.ms/u/s!ArYBhHmSAbFOd8H6ciT2CYwqFaE?e=VeWdS8)
 - Object features (Extracted by Faster-RCNN) : [MSVD-Faster-RCNN](https://1drv.ms/u/s!ArYBhHmSAbFOef5wZTxndFlz7bQ?e=fBPFHG)
 - Linguistic supervision: [MSVD-Language](https://1drv.ms/u/s!ArYBhHmSAbFOetaEHJnITH8q-eE?e=ePZlcn)
+- Splits: [MSVD-Splits](https://1drv.ms/u/s!ArYBhHmSAbFOgUj3RjfW982_KntY?e=hPMWYI)
 
 
 
