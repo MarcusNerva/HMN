@@ -25,7 +25,7 @@ def _get_tgt_permutation_idx(indices):
 
 
 def train_fn(cfgs: TotalConfigs, model_name: str, model: nn.Module, matcher: HungarianMatcher, train_loader, valid_loader, device):
-    optimizer = optim.Adam(model.parameters(), lr=cfgs.train.learning_rate, weight_decay=cfgs.train.weight_decay)
+    optimizer = optim.Adam(model.parameters(), lr=cfgs.train.learning_rate)
     lr_scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, cfgs.train.max_epochs, eta_min=0, last_epoch=-1)
     language_loss = LanguageModelCriterion()
     soft_loss = SoftCriterion()
